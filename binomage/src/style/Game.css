@@ -1,0 +1,226 @@
+
+.game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .grid-container .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-color: #ccc;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 20px;
+    height: 80px;
+    width: 60px;
+    transition: 0.1s ease-in-out;
+  }
+
+  .card img.logo{
+    width:300%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .card.flipped {
+    transition: ease-in-out;
+    animation: flipped 0.5s ease;
+    background-color: #4c54af;
+  }
+  @keyframes flipped{
+    0% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+  .card.flipped-solved {
+    background-color: #4a78c3;
+    pointer-events: none;
+    animation: bounce 2s ease infinite;
+  }
+  
+  .win-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: blue;
+    text-align: center;
+    margin-top: 20px;
+    animation: bounce 1s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .game-container svg{
+    height: auto;
+    width: 100px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .player-info{
+    color:black;
+    margin-bottom: 20px;
+  }
+
+  .player-info span{
+    display: inline;
+    color: blue;
+    transition: all 0.5s ease-in-out;
+    
+  }
+  
+.card .bx{
+    font-size: 40px;
+}
+
+.logo-down{
+    position: absolute;
+    width: 125%;
+    height: auto;
+    object-fit: cover;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+.win-message.hide{
+  visibility: hidden;
+}
+
+.win-message.visible{
+  visibility: visible;
+}
+
+.modal{
+  position: absolute;
+  z-index: 10;
+  margin: auto;
+
+  display: grid;
+  grid-template-rows: 50% 45%;
+  width: 90%;
+  height: auto;
+  max-height: 500px;
+  min-height: 60%;
+  background: rgba(255, 255, 255, 0.4); 
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal .Parrain-img{
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit:cover;
+  background-size: cover;
+  border-radius: 10px 10px 0 0;
+  object-position: top;
+}
+
+.modal .modal-content{
+  color: black;
+}
+
+.modal-content h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.modal-content h3 i{
+  font-size: 3rem;
+  color: blue;
+}
+
+.modal-content p.filleule{
+  font-size: 1.2rem;
+  margin: 0 10px;
+}
+
+.modal-content p.filleule i{
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #4a78c3;
+  margin-bottom: 10px;
+}
+
+.modal-content div.parrain-info{
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  gap: 10px;
+  margin: 10px 0 10px 10px ;
+}
+
+.modal i.icon-close{
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  align-content: center;
+  background: rgba(255, 255, 255, 0.4); 
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: red;
+  font-weight: 800;
+  font-size: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.loading{
+  color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+@media screen and (min-width: 480px) {
+  .game-container {
+      visibility: hidden;
+  }
+}

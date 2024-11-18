@@ -1,0 +1,70 @@
+section.choix-container{
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    background-color: white;
+}
+
+.btn-container{
+    width: 90%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4); 
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+    color: white;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-container button.checked{
+    background-color: blue;
+    color: white;
+}
+
+.btn-choix{
+    margin-bottom: 50px;
+}
+
+.choix-error-message{
+    text-align: center;
+    color: red;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.titre-choix{
+    margin-top: 100px;
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    text-align: center;
+}
+
+section.choix-container svg #loop-normal {
+    fill: none;
+    stroke: blue;
+    stroke-width: 12;
+}
+
+section.choix-container svg{
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media screen and (min-width: 480px) {
+    section.choix-container {
+        visibility: hidden;
+    }
+}
